@@ -1,0 +1,24 @@
+{
+  "name": "pomment-import-disqus",
+  "version": "2.0.0",
+  "description": "Import your old comments from Disqus to Pomment",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pomment/import-disqus.git"
+  },
+  "author": "tcdw <tcdw2011@gmail.com>",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/pomment/import-disqus/issues"
+  },
+  "homepage": "https://github.com/pomment/import-disqus#readme",
+  "devDependencies": {
+    "eslint": "^6.4.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2"
+  }
+}
