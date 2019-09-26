@@ -19,7 +19,11 @@ const base = {
         file: 'dist/index.js',
         format: 'iife',
         sourcemap: (env !== 'production'),
+        globals: {
+            jszip: 'JSZip',
+        },
     },
+    external: ['jszip'],
     plugins: [
         progress({
             clearLine: false,
