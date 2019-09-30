@@ -2,11 +2,34 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
     <title>Disqus 数据转换工具</title>
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <input type="file" id="content">
+    <div class="container">
+        <header>
+            <h1>Disqus 数据转换工具</h1>
+        </header>
+        <section class="upload">
+            <input type="file" id="file-receiver">
+            <label class="button" for="file-receiver" id="upload-btn">选择数据文件</label>
+            <div class="button progress" id="progress-btn" style="display: none">正在转换</div>
+        </section>
+        <section class="info">
+            <section class="markdown-body">
+                <p>本工具可以将你的 Disqus 备份文件转换为 Pomment 的数据格式。</p>
+                <p>点击『选择数据文件』按钮，选择<b>已经解压的</b> Disqus 备份文件（XML 格式），稍后已经打包好的数据文件会自动通过浏览器下载。</p>
+                <h2>注意</h2>
+                <ul>
+                    <li>由于 Disqus 没有在备份数据中提供评论者的电子邮箱地址，所有的评论如果在 Pomment 收到新回复，评论者将不会收到任何新的消息提醒。</li>
+                    <li>同样，访客头像均直接使用 Disqus 的头像 API 地址，并记录在 <code>avatar</code> 字段中。</li>
+                </ul>
+                <h2>重要声明</h2>
+                <p>本工具为纯前端实现，你的数据不会被上传到我们的服务器。</p>
+            </section>
+        </section>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/jszip@3.2.2/dist/jszip.min.js"></script>
     <script src="index.js"></script>
 </body>

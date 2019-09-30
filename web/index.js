@@ -2,6 +2,10 @@ import JSZip from 'jszip';
 import parseDisqusXML from '../lib/parse';
 import './scss/index.scss';
 
+const file = document.getElementById('file-receiver');
+const uploadBtn = document.getElementById('upload-btn');
+const progressBtn = document.getElementById('progress-btn');
+
 const handler = (content) => {
     const result = new JSZip();
     const parsed = parseDisqusXML(content);
@@ -37,15 +41,22 @@ const handler = (content) => {
         document.body.appendChild(eleLink);
         eleLink.click();
         document.body.removeChild(eleLink);
+        uploadBtn.style.display = 'inline-block';
+        progressBtn.style.display = 'none';
     });
 };
 
-const file = document.getElementById('content');
 file.addEventListener('change', () => {
     const fileInfo = file.files[0];
-    const fileReader = new FileReader();
-    fileReader.onload = (e) => {
-        handler(e.target.result);
-    };
-    fileReader.readAsText(fileInfo, 'utf-8');
+    if (typeof fileInfo !== 'undefined') {
+        const fileReader = new FileReader();
+        fileReader.onload = (e) => {
+            uploadBtn.style.display = 'none';
+            progressBtn.style.display = 'inline-block';
+            setTimeout(() => {
+                handler(e.target.result);
+            }, 600);
+        };
+        fileReader.readAsText(fileInfo, 'utf-8');
+    }
 });
