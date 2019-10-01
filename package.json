@@ -40,6 +40,7 @@
   },
   "dependencies": {
     "@sukka/markdown.css": "^0.1.5",
-    "jszip": "^3.2.2"
+    "jszip": "^3.2.2",
+    "normalize.css": "^8.0.1"
   }
 }

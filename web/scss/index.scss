@@ -1,6 +1,8 @@
+@import "~normalize.css/normalize.css";
 @import "~@sukka/markdown.css/dist/markdown.css";
 
 body {
+    margin: 1em;
     background-color: #b9e0e5;
     background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 268 268' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.4' fill-rule='evenodd'%3E%3Ccircle cx='37' cy='37' r='36'/%3E%3Ccircle cx='171' cy='171' r='36'/%3E%3C/g%3E%3C/svg%3E");
     background-attachment: fixed;
@@ -28,10 +30,7 @@ body {
     background-color: #fff;
     border-radius: 1em;
     box-sizing: border-box;
-    padding-top: 0;
-    padding-left: 1em;
-    padding-right: 1em;
-    padding-bottom: 1em;
+    padding: 0 1em;
     box-shadow: rgba(0, 0, 0, 0.12) .25em .25em 1em .25em;
     & > header {
         text-align: center;
@@ -86,4 +85,11 @@ body {
     & > .info {
         padding: 1em 0;
     }
+}
+
+footer {
+    text-align: center;
+    padding: 0.5em;
+    font-size: 0.875em;
+    color: rgba(0, 0, 0, 0.4);
 }
